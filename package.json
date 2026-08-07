@@ -1,0 +1,22 @@
+{
+  "name": "media-list",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "modern-normalize": "^3.0.1",
+    "nuxt": "^4.5.2",
+    "sass-mq": "^7.0.1",
+    "vue": "^3.5.41",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "sass": "^1.102.0"
+  }
+}

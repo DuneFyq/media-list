@@ -1,0 +1,28 @@
+:root {
+  --color-light: #f8fafc; /* Очень светлый серый (почти белый) */
+  --color-dark: #0f172a;  /* Глубокий темно-синий (вместо черного) */
+
+  --color-accent: #6366f1; /* Современный индиго */
+
+  --color-base-bg: #ffffff; /* Чистый белый фон */
+  --color-secondary-bg: #f1f5f9; /* Легкий серый для карточек/секций */
+
+  --color-base-font: #1e293b; /* Мягкий темно-серый (лучше для глаз, чем чистый черный) */
+
+  --font-family-base: /* шрифт */ , sans-serif;
+  --font-family-accent: /* шрифт */ , sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-light: #0f172a;
+    --color-dark: #f8fafc;
+
+    --color-accent: #818cf8; /* Светлый индиго (хорошо виден на темном) */
+
+    --color-base-bg: #09090b; /* Почти черный фон */
+    --color-secondary-bg: #18181b; /* Темно-серый */
+
+    --color-base-font: #e2e8f0; /* Светло-серый текст */
+  }
+}

@@ -1,0 +1,30 @@
+@use "mixins" as *;
+
+/*
+ Плавная прокрутка для якорных ссылок
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include fluid-text(18, 14);
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--font-family-base, system-ui, -apple-system, sans-serif);
+  letter-spacing: -0.03em;
+  color: var(--color-base-font);
+  background-color: var(--color-base-bg);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
