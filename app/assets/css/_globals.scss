@@ -10,7 +10,7 @@ html {
 body {
   @include fluid-text(18, 14);
 
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
 
@@ -27,4 +27,12 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+a {
+  color: var(--color-link);
+
+  &:visited {
+    color: var(--color-link);
+  }
 }
