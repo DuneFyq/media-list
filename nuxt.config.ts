@@ -15,6 +15,14 @@ export default defineNuxtConfig({
     },
   },
 
+  modules: ["@nuxt/icon", "@nuxt/image", "nuxt-auth-utils"],
+  components: [
+    {
+      path: "~/components",
+      pathPrefix: false,
+    },
+  ],
+
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 });

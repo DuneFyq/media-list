@@ -10,13 +10,17 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/icon": "2.4.1",
+    "@nuxt/image": "^2.1.0",
     "modern-normalize": "^3.0.1",
     "nuxt": "^4.5.2",
+    "nuxt-auth-utils": "0.5.30",
     "sass-mq": "^7.0.1",
     "vue": "^3.5.41",
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
+    "@iconify-json/feather": "^1.2.1",
     "sass": "^1.102.0"
   }
 }
