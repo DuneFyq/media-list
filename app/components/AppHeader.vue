@@ -1,20 +1,16 @@
-<script lang="ts" setup>
-const { isOpen, toggle } = useSidebar();
-</script>
-
 <template>
   <header class="header">
-    <button @click="toggle" class="header__toggle">
-      {{ isOpen ? "Закрыть" : "Открыть" }}
-    </button>
+    <HeaderToggleButton />
 
-    <h1 class="header__title">My media list</h1>
+    <NuxtLink class="header__title" to="/" aria-label="На главную">
+      <span class="visually-hidden">My media list</span>
+      <img src="" alt="" />
+    </NuxtLink>
 
-    <div class="header__profile">
-      <img src="" alt="Картинка профиля" class="profile__logo" />
-      <span class="profile__nickname">Игрок 1</span>
-      <NuxtLink to="/user/profile/0" class="profile__link">Профиль</NuxtLink>
-    </div>
+    <AuthState v-slot="{ loggedIn, user, clear }">
+      <HeaderAuthorized v-if="loggedIn" :user="user" @logout="clear" />
+      <HeaderGuestLinks v-else />
+    </AuthState>
   </header>
 </template>
 
@@ -24,30 +20,34 @@ const { isOpen, toggle } = useSidebar();
   align-items: center;
   gap: 0.625rem;
   padding: 1rem;
+  background-color: var(--color-secondary-bg);
+
+  @include mq($until: 380px) {
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  > :first-child,
+  > :last-child {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  > :first-child {
+    justify-content: flex-start;
+  }
+
+  > :last-child {
+    justify-content: flex-end;
+  }
 
   &__title {
-    @include fluid-text(40, 30);
-    margin: 0;
+    @include fluid-text(40, 20);
+    color: var(--color-accent);
+    text-decoration: none;
     text-align: center;
-    flex: 1;
-  }
-
-  &__profile {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-}
-
-.profile {
-  &__logo {
-    @include square(40px);
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  &__nickname {
-    margin: 0;
+    flex: 0 0 auto;
   }
 }
 </style>
