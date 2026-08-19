@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@iconify-json/feather": "^1.2.1",
-    "sass": "^1.102.0"
+    "sass": "^1.102.0",
+    "typescript": "6.0.3"
   }
 }

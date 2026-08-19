@@ -1,75 +1,45 @@
-# Nuxt Minimal Starter
+# Media List
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+**Media List** is a convenient list of viewed and searchable productions.
 
-## Setup
+## Tech Stack
+- **Framework:** Nuxt v4.5.2 (Composition API)
+- **Language:** TypeScript
+- **Styling:** SCSS
 
-Make sure to install dependencies:
+## Installation & Running
 
+To run the project locally, follow these steps:
+
+#### 1. Clone the repository
 ```bash
-# npm
-npm install
+git clone https://github.com/DuneFyq/Car-Roulette
+cd Car-Roulette
+```
 
-# pnpm
+#### 2. Install dependencies
+```bash
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+#### 3. Start the development server
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+pnpm run dev
 ```
+The application will be available at `http://localhost:3000`.
 
-## Production
-
-Build the application for production:
-
+#### 4. Build the project for production
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+pnpm run build
 ```
 
-Locally preview production build:
-
+#### 5. Preview the production build locally
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+pnpm run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Support
+For support, collaboration, or inquiries, feel free to reach out via email: [fabylnen1@bk.ru](mailto:fabylnen1@bk.ru).
+
+## Author
+- **[@DuneFyq](https://github.com/DuneFyq)**
