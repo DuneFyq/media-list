@@ -23,6 +23,12 @@
   --border-button: 2px solid var(--color-gray);
   --border-button-accent: 2px solid var(--color-accent);
 
+  --color-rating-18: #ef4444;
+  --color-rating-16: #f97316;
+  --color-rating-12: #eab308;
+  --color-rating-6: #a3e635;
+  --color-rating-0: #22c55e;
+
   --font-family-base: /* шрифт */ , sans-serif;
   --font-family-accent: /* шрифт */ , sans-serif;
 }
@@ -41,5 +47,11 @@
     --color-secondary-bg: #18181b;
 
     --color-base-font: #e2e8f0;
+
+    --color-rating-18: #f87171;
+    --color-rating-16: #fb923c;
+    --color-rating-12: #facc15;
+    --color-rating-6:  #a3e635;
+    --color-rating-0:  #4ade80;
   }
 }

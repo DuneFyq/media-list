@@ -1,15 +1,17 @@
 <script lang="ts" setup>
-const { data: productions } = await useFetch<Production[]>("/api/auth/productions");
+const productions = await $fetch<Production[]>("/api/productions", {
+  method: "GET",
+});
 </script>
 
 <template>
   <div class="list-page">
     <div class="container list-page__container">
-      <h1 class="list-page__title">Список просмотренного</h1>
+      <h1 class="list-page__title">Произведения</h1>
 
       <ListFilter />
 
-      <ProductionsGrid :productions="productions!" />
+      <ProductionsGrid :productions="productions" />
     </div>
   </div>
 </template>

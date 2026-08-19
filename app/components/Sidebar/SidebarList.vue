@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 const menuItems = [
   { to: "/", label: "Главная" },
+  { to: "/category/productions", label: "Произведения" },
   { to: "/category/watched", label: "Список просмотренного" },
-  { to: "/category/opinions", label: "Моё мнение" },
   { to: "/category/watchlist", label: "Собираюсь посмотреть" },
+  { to: "/category/opinions", label: "Моё мнение" },
 ];
 </script>
 
