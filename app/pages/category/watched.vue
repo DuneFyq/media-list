@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-const { data: productions } = await useFetch<Production[]>("/api/auth/productions");
+const { data: productions, error } = await useFetch<Production[]>("/api/productions");
+if (error.value) {
+  console.error("Произошла ошибка при загрузке:", error.value);
+}
 </script>
 
 <template>
@@ -9,7 +12,8 @@ const { data: productions } = await useFetch<Production[]>("/api/auth/production
 
       <ListFilter />
 
-      <ProductionsGrid :productions="productions!" />
+      <ProductionsGrid v-if="productions" :productions="productions" />
+      <div v-else>Загрузка...</div>
     </div>
   </div>
 </template>

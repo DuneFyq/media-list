@@ -11,7 +11,7 @@ defineEmits(["logout"]);
 
 <template>
   <div class="profile-panel">
-    <NuxtLink to="/add-production" class="profile-panel__add-btn">
+    <NuxtLink to="/production/add-production" class="profile-panel__add-btn">
       <Icon class="profile-panel__add-icon" name="feather:plus" />
     </NuxtLink>
 

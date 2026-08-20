@@ -12,13 +12,13 @@
   height: 100dvh;
   text-align: center;
 
+  &__description,
   &__title {
     margin: 0;
   }
 
   &__description {
     flex: 1;
-    margin: 0;
 
     display: flex;
     justify-content: center;
