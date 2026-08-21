@@ -69,7 +69,6 @@ const posts = [
     margin: 0;
   }
 
-
   &__title {
     @include fluid-text(40, 20);
     text-align: center;
@@ -92,8 +91,23 @@ const posts = [
 }
 
 .post {
+  display: flex;
+  flex-direction: column;
+
   padding: 1rem;
+  border-radius: var(--border-radius-bg);
   background-color: var(--color-primary-bg);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  @include mq($from: desktop) {
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--box-shadow-accent);
+    }
+  }
 
   &__description,
   &__title {
@@ -102,6 +116,17 @@ const posts = [
 
   &__title {
     @include fluid-text(30, 15);
+  }
+
+  &__description {
+    @include fluid-text(20, 10);
+  }
+
+  &__date {
+    @include fluid-text(15, 10);
+
+    padding-top: .625rem;
+    text-align: right;
   }
 }
 </style>

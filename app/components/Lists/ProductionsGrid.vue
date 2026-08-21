@@ -52,7 +52,7 @@ defineProps<{
     @include mq($from: desktop) {
       &:hover {
         transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        box-shadow: var(--box-shadow-accent);
       }
     }
   }
