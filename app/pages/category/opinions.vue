@@ -61,7 +61,6 @@ const posts = [
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
   }
 
   &__title,

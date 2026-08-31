@@ -11,17 +11,13 @@ const filteredProductions = computed(() => {
   return productions.value?.filter((production) => {
     const matchesGenre =
       !filter.value.genre.length ||
-      production.genres.some((genre: string) =>
-        filter.value.genre.some(
-          (selectedGenre) => String(selectedGenre) === String(genre),
-        ),
+      production.genres.some((genre: number) =>
+        filter.value.genre.some((selectedGenre) => selectedGenre === genre),
       );
     const matchesFormat =
       !filter.value.format.length ||
-      production.formats.some((format: string) =>
-        filter.value.format.some(
-          (selectedFormat) => String(selectedFormat) === String(format),
-        ),
+      production.formats.some((format: number) =>
+        filter.value.format.some((selectedFormat) => selectedFormat === format),
       );
 
     return matchesGenre && matchesFormat;
@@ -56,7 +52,6 @@ const filteredProductions = computed(() => {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
-    padding: 1rem;
   }
 
   &__title {

@@ -55,15 +55,12 @@ jobs:
         with:
           node-version: "24"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Setup pnpm
+        run: corepack enable pnpm
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           static_site_generator: nuxt
-      - name: Setup pnpm
-        if: steps.detect-package-manager.outputs.manager == 'pnpm'
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
       - name: Restore cache
         uses: actions/cache@v4
         with:

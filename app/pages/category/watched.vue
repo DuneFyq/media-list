@@ -30,7 +30,6 @@ if (error.value) {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
-    padding: 1rem;
   }
 
   &__title {

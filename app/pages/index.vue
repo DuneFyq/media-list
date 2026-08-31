@@ -7,6 +7,10 @@
 
 <style lang="scss" scoped>
 .content {
+  min-height: 100svh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+
   display: flex;
   flex-direction: column;
   height: 100dvh;
@@ -15,6 +19,10 @@
   &__description,
   &__title {
     margin: 0;
+  }
+
+  &__title {
+    @include fluid-text(40, 20);
   }
 
   &__description {
