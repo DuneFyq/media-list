@@ -12,9 +12,12 @@
   "dependencies": {
     "@nuxt/icon": "2.4.1",
     "@nuxt/image": "^2.1.0",
+    "@pinia/nuxt": "1.0.2",
+    "@vueuse/nuxt": "14.4.0",
     "modern-normalize": "^3.0.1",
     "nuxt": "^4.5.2",
     "nuxt-auth-utils": "0.5.30",
+    "pinia": "^4.0.3",
     "sass-mq": "^7.0.1",
     "vue": "^3.5.41",
     "vue-router": "^5.2.0"

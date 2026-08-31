@@ -15,7 +15,13 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/icon", "@nuxt/image", "nuxt-auth-utils"],
+  modules: [
+    "@nuxt/icon",
+    "@nuxt/image",
+    "nuxt-auth-utils",
+    "@vueuse/nuxt",
+    "@pinia/nuxt",
+  ],
   components: [
     {
       path: "~/components",
