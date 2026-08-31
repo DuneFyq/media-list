@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // GitHub Pages requires static pre-rendering
+  ssr: false,
+
   css: ["modern-normalize/modern-normalize.css", "~/assets/css/main.scss"],
   vite: {
     css: {
