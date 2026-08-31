@@ -11,18 +11,19 @@ defineEmits(["logout"]);
 
 <template>
   <div class="profile-panel">
-    <NuxtLink to="/production/add-production" class="profile-panel__add-btn">
+    <NuxtLink to="/production/add-production" class="profile-panel__add-button">
       <Icon class="profile-panel__add-icon" name="feather:plus" />
     </NuxtLink>
 
-    <HeaderProfile
-      class="profile-panel__header"
+    <UserProfile
       :nickname="user.nickname"
-      :userID="user.id"
+      :user-id="user.id"
+      variant="header"
+      :show-link="true"
     />
 
     <button
-      class="profile-panel__logout-btn"
+      class="profile-panel__logout-button"
       type="button"
       @click="$emit('logout')"
     >
@@ -33,17 +34,25 @@ defineEmits(["logout"]);
 
 <style lang="scss" scoped>
 .profile-panel {
+  width: 100%;
   display: flex;
-  align-items: center;
+  justify-content: center;
   gap: 0.4375rem;
+  width: 100%;
 
-  &__add-btn {
+  @include mq($until: mobile) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__add-button {
     @include square(40px);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-dark);
     transition: color 0.2s ease;
+    flex-shrink: 0;
 
     &:hover,
     &:focus-visible {
@@ -56,7 +65,11 @@ defineEmits(["logout"]);
     height: 100%;
   }
 
-  &__logout-btn {
+  &__profile {
+    flex-shrink: 0;
+  }
+
+  &__logout-button {
     cursor: pointer;
     text-align: center;
     border: none;
@@ -64,6 +77,7 @@ defineEmits(["logout"]);
     background-color: var(--color-accent);
     color: var(--color-base-font);
     padding: 0.3125rem;
+    white-space: nowrap;
   }
 }
 </style>
