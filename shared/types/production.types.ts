@@ -1,4 +1,4 @@
-export interface Production {
+export interface TProduction {
   id: number;
   name: string;
   image: string;
@@ -6,6 +6,6 @@ export interface Production {
   ageRating: number;
   dateCreation: string;
   description: string;
-  formats: string[];
-  genres: string[];
+  formats: number[];
+  genres: number[];
 }
