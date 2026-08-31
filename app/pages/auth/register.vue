@@ -28,11 +28,10 @@ async function handleReg() {
 
     await fetchUserSession();
     await navigateTo("/");
-  } catch (error: any) {
-    serverError.value =
-      error?.data?.message ||
-      error?.message ||
-      "Ошибка входа. Проверьте данные.";
+  } catch (error: unknown) {
+    if (typeof error === "string") {
+      serverError.value = error ?? "Ошибка входа. Проверьте данные.";
+    }
   }
 }
 </script>
