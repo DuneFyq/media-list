@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-const { data: productions, error } = await useFetch<Production[]>("/api/productions");
+const { data: productions, error } =
+  await useFetch<TProduction[]>("/api/productions");
 if (error.value) {
   console.error("Произошла ошибка при загрузке:", error.value);
 }

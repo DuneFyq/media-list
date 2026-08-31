@@ -1,8 +1,32 @@
 <script lang="ts" setup>
-const { data: productions, error } = await useFetch<Production[]>("/api/productions");
+const { data: productions, error } =
+  await useFetch<TProduction[]>("/api/productions");
 if (error.value) {
   console.error("Произошла ошибка при загрузке:", error.value);
 }
+
+const filteredProductions = computed(() => {
+  const { filter } = useFilters();
+
+  return productions.value?.filter((production) => {
+    const matchesGenre =
+      !filter.value.genre.length ||
+      production.genres.some((genre: string) =>
+        filter.value.genre.some(
+          (selectedGenre) => String(selectedGenre) === String(genre),
+        ),
+      );
+    const matchesFormat =
+      !filter.value.format.length ||
+      production.formats.some((format: string) =>
+        filter.value.format.some(
+          (selectedFormat) => String(selectedFormat) === String(format),
+        ),
+      );
+
+    return matchesGenre && matchesFormat;
+  });
+});
 </script>
 
 <template>
@@ -12,7 +36,10 @@ if (error.value) {
 
       <ListFilter />
 
-      <ProductionsGrid v-if="productions" :productions="productions" />
+      <ProductionsGrid
+        v-if="filteredProductions"
+        :productions="filteredProductions"
+      />
       <div v-else>Загрузка...</div>
     </div>
   </div>

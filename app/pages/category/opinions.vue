@@ -33,7 +33,7 @@ const posts = [
       <h1 class="list-page__title">Моё мнение</h1>
 
       <div class="list-page__content">
-        <article class="post" v-for="post in posts">
+        <article class="post" v-for="post in posts" :key="post.title">
           <h2 class="post__title">{{ post.title }}</h2>
           <p class="post__description">
             {{ post.description }}

@@ -1,7 +1,20 @@
 <script lang="ts" setup>
-defineProps<{
-  production: Production;
+import { useFormatsStore } from "@/stores/formats";
+import { useGenresStore } from "@/stores/genres";
+
+const props = defineProps<{
+  production: TProduction;
 }>();
+
+const formatsStore = useFormatsStore();
+const genresStore = useGenresStore();
+
+const formatNames = computed(() =>
+  formatsStore.getNamesByIds(props.production.formats),
+);
+const genreNames = computed(() =>
+  genresStore.getNamesByIds(props.production.genres),
+);
 </script>
 
 <template>
@@ -14,15 +27,11 @@ defineProps<{
 
       <div class="production__tags">
         <TagList
-          v-if="production.formats?.length"
-          :items="production.formats"
+          v-if="formatNames.length"
+          :items="formatNames"
           variant="format"
         />
-        <TagList
-          v-if="production.genres?.length"
-          :items="production.genres"
-          variant="genre"
-        />
+        <TagList v-if="genreNames.length" :items="genreNames" variant="genre" />
       </div>
     </div>
   </li>
