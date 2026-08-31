@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   // GitHub Pages requires static pre-rendering
   ssr: false,
 
+  app: {
+    baseURL: '/media-list/',
+  },
+
   css: ["modern-normalize/modern-normalize.css", "~/assets/css/main.scss"],
   vite: {
     css: {
